@@ -1,5 +1,6 @@
 # XMAS Pickle Rick PCBs
-![](images/PCBrick.jpg)
+![](images/PCBrick.png)
+
 Objectives
 ---
 1. Make a christmas ornament PCB that twinkles.
@@ -74,8 +75,9 @@ Power calculations
 Now that I have the transistor in place, a solid sleep pattern, and a RESET button to kick the IC back to life, I should be able to get a good long run out of the batteries in this board, given that the user doesn’t play with it all the time.  
 
 The LEDs generate a random color, then fade out. This makes the overall consumption spike up to about 28mA, then gradually fall to about 3mA. This repeats for about 45 seconds, then the LEDs go blank, the mosfet shuts power off to them, and the ATTiny85 goes to sleep. The most basic averaging of the usage during the ‘on’ period should say that (28+3)/2=15.5mA.
-Using the [Oregon Embedded battery life calculator](https://oregonembedded.com/batterycalc.htm), I was able to get these results:
-![](images/powercalc.jpg)
+Using the [Oregon Embedded battery life calculator](https://oregonembedded.com/batterycalc.htm), I was able to get these results:  
+
+![](images/powercalc.png)
 
 * 240 mAh = Two CR2032 in series
 * .00066 mA = 660 nA
@@ -138,5 +140,10 @@ Unfortunately (**god f\*\*\*ing d\*\*\*it!**), while I was designing the Pickle 
 
 AND (**motherf\*\*\*er!**), instead of putting the batteries in series, I accidentally just followed the rat’s nest in KiCad and routed them in parallel. So instead of ~6v VCC, there’s about ~2.8v. I burned the bootloaders at 8MHz since the Neopixel library depends on it. And the datasheet says  that an ATTiny85 at 0 – 10 MHz can run between 2.7 - 5.5V. So… I’m a bit worried about lifespan and functional operation, but unfortunately there’s just not enough time to fix it and get a new order shipped to me before christmas. After a test of one of the boards, it last about a week...  
 
-Oh well… lesson learned. They still came out pretty killer in my opinion! 😊
+### Oh well… lesson learned. They still came out pretty killer in my opinion! 😊
 
+![](images/1.jpg)
+![](images/2.jpg)
+![](images/3.jpg)
+![](images/4.jpg)
+![](images/5.jpg)
